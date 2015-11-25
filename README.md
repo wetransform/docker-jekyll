@@ -9,16 +9,17 @@ Build:
 docker build -t wetransform/jekyll .
 ```
 
-Push:
+Default working directory is `/opt/jekyll`. Use it to mount a Jekyll site as volume and conveniently call `jekyll serve` or `jekyll build`, e.g.:
 
 ```
-docker push wetransform/jekyll
+docker run -it -v $(pwd):/opt/jekyll -p 9001:9001 wetransform/jekyll jekyll serve
 ```
+
 
 Tags
 ----
 
-For newly created images create a tag featuring the version numbers of the main libraries/tools, e.g. `jekyll-2.5.3_ruby-2.1_node-0.12.4`.
+For manully created images create a tag featuring the version numbers of the main libraries/tools, e.g. `jekyll-2.5.3_ruby-2.1_node-0.12.4`.
 
 
 License
