@@ -34,6 +34,10 @@ ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN npm install -g bower grunt-cli npm-shrinkwrap
 
+# possible volume mount point for convenient use
+RUN mkdir -p /opt/jekyll
+WORKDIR /opt/jekyll
+
 # Build:
 # docker build -t wetransform/jekyll .
 
