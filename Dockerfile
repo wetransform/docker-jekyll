@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:16.04
 
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -20,7 +20,7 @@ RUN gem install --no-ri --no-rdoc \
   kramdown
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 0.12.4
+ENV NODE_VERSION 6.10.3
 
 # Install nvm with node and npm
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | bash \
